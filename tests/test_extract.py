@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup as bs
-from extract import build_urls, parse_product_card, parse_page
+from utils.extract import build_urls, parse_product_card, parse_page
 
 def test_build_urls():
     urls = build_urls()

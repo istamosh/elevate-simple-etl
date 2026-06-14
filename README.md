@@ -2,7 +2,7 @@
 
 Proyek ini merupakan submission ETL sederhana yang terdiri dari tiga tahap utama: **extract**, **transform**, dan **load**. Tahap extract mengambil data produk dari situs `fashion-studio.dicoding.dev` dengan pagination hingga halaman 50 dan menyimpannya ke file JSON mentah.[1]  
 Tahap transform membersihkan harga, membuang `Unknown Product`, menghapus data duplikat berdasarkan kombinasi `title`, `size`, dan `gender`, lalu mengonversi harga ke IDR, rating ke float, serta merapikan field `size` dan `gender`.[2]  
-Tahap load membaca hasil transform dari JSON, menuliskannya ke `finaldata.csv`, lalu memverifikasi hasilnya kembali dengan pandas.[3]
+Tahap load membaca hasil transform dari JSON, menuliskannya ke `final_data.csv`, lalu memverifikasi hasilnya kembali dengan pandas.[3]
 
 ## Struktur Proyek
 
@@ -11,9 +11,10 @@ Tahap load membaca hasil transform dari JSON, menuliskannya ke `finaldata.csv`, 
 ├── extract.ipynb
 ├── transform.ipynb
 ├── load.ipynb
-├── extract.py
-├── transform.py
-├── load.py
+├── utils/
+│   ├── extract.py
+│   ├── transform.py
+│   └── load.py
 ├── tests/
 │   ├── test_extract.py
 │   ├── test_transform.py
@@ -38,7 +39,7 @@ Tahap extract mencakup:
 - melakukan request ke setiap halaman dengan `requests.get(..., timeout=10)`.[1]
 - mem-parsing HTML menggunakan BeautifulSoup dan mengambil elemen dengan class `product-details`.[1]
 - mengekstrak field `title`, `price`, `rating`, `color`, `size`, dan `gender` dari tiap kartu produk.[1]
-- menyimpan hasil ke `extracteddata.json` agar proses scraping tidak perlu diulang jika file sudah tersedia.[1]
+- menyimpan hasil ke `extracted_data.json` agar proses scraping tidak perlu diulang jika file sudah tersedia.[1]
 
 ### 2. Transform
 
@@ -49,13 +50,13 @@ Tahap transform mencakup:
 - mengubah `price` dari string USD ke integer IDR.[2]
 - mengubah `rating` dari string seperti `Rating: ⭐ 4.8 / 5` menjadi `float`.[2]
 - membersihkan prefix `Size: ` dan `Gender: `.[2]
-- menyimpan hasil akhir ke `transformeddata.json`.[2]
+- menyimpan hasil akhir ke `transformed_data.json`.[2]
 
 ### 3. Load
 
 Tahap load mencakup:
-- membaca `transformeddata.json`.[3]
-- menulis data ke `finaldata.csv` menggunakan `csv.DictWriter`.[3]
+- membaca `transformed_data.json`.[3]
+- menulis data ke `final_data.csv` menggunakan `csv.DictWriter`.[3]
 - membaca ulang CSV menggunakan pandas untuk verifikasi hasil.[3]
 - hasil akhir menunjukkan dataset berisi 867 baris dan 6 kolom: `title`, `price`, `rating`, `color`, `size`, dan `gender`.[3]
 
@@ -63,7 +64,7 @@ Tahap load mencakup:
 
 Proyek ini dibuat menggunakan **uv** dan environment virtual (**venv**). Gunakan salah satu pola berikut.
 
-### Opsi 1 — `uv`
+### Opsi 1: `uv`
 
 Buat virtual environment:
 
@@ -97,7 +98,7 @@ Install dependency from the provided `pyproject.toml`:
 uv sync
 ```
 
-### Opsi 2 — `venv` bawaan Python
+### Opsi 2: `venv` bawaan Python
 
 Buat virtual environment:
 
@@ -151,7 +152,7 @@ python -m pytest -v
 Untuk melihat coverage:
 
 ```bash
-python -m pytest --cov=extract --cov=transform --cov=load --cov-report=term-missing
+python -m pytest --cov=utils --cov-report=term-missing
 ```
 
 Cakupan pengujian:

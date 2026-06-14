@@ -1,6 +1,6 @@
 import json
 import pandas as pd
-from load import load_json, save_csv, read_csv_with_pandas
+from utils.load import load_json, save_csv, read_csv_with_pandas
 
 sample_data = [
     {

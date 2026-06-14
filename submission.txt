@@ -1,8 +1,17 @@
-# Cara menjalankan skrip
-1. Pastikan virtual environment dan requirements.txt sudah diinstall
-2. Jalankan extract.ipynb secara keseluruhan agar terlihat seluruh prosesnya
-3. Jalankan transform.ipynb secara keseluruhan
-4. Jalankan load.ipynb secara keseluruhan
+# Cara menjalankan script ETL Pipeline
+1. Pastikan virtual environment aktif dan seluruh dependency sudah terpasang.
+2. Jalankan "extract.ipynb" secara keseluruhan agar seluruh proses extract terlihat.
+3. Jalankan "transform.ipynb" secara keseluruhan.
+4. Jalankan "load.ipynb" secara keseluruhan.
 
-# Cara menjalankan test file
-1. python -m pytest
+# Cara menjalankan Unit Test
+1. Pastikan file test sudah tersedia di folder "tests".
+2. Jalankan perintah berikut:
+
+python -m pytest
+
+# Cara menjalankan Test Coverage
+1. Pastikan plugin "pytest-cov" sudah terpasang.
+2. Jalankan perintah berikut:
+
+python -m pytest --cov=extract --cov=transform --cov=load --cov-report=term-missing
