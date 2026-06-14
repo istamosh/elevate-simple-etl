@@ -1,17 +1,29 @@
-# Cara menjalankan script ETL Pipeline
+# Cara menjalankan script ETL Pipeline dan push ke dalam Google Sheets
 1. Pastikan virtual environment aktif dan seluruh dependency sudah terpasang.
-2. Jalankan "extract.ipynb" secara keseluruhan agar seluruh proses extract terlihat.
-3. Jalankan "transform.ipynb" secara keseluruhan.
-4. Jalankan "load.ipynb" secara keseluruhan.
+
+python -m venv .venv
+
+2. Jalankan Jupyter notebook menggunakan command:
+
+jupyter lab
+
+3. Kemudian ada link (localhost), buka link tersebut maka akan diarahkan ke Web Browser dengan Jupyter Interface.
+4. Klik dua kali pada "extract.ipynb" di Sidebar kanan, dan pada Tab "Run" pilih "Run All Cells", tunggu sampai proses selesai. Maka akan muncul extracted_data.json.
+5. Klik dua kali pada "transform.ipynb" di Sidebar kanan, dan pada Tab "Run" pilih "Run All Cells", tunggu sampai proses selesai. Maka akan muncul cleaned_data.json dan transformed_data.json.
+6. Klik dua kali pada "load.ipynb" di Sidebar kanan, dan pada Tab "Run" pilih "Run All Cells", tunggu sampai proses selesai. Maka akan muncul final_data.csv.
+7. Cara menjalankan script untuk mengirim "final_data.csv" ke dalam Google Sheets
+
+python utils/write_data.py
+
 
 # Cara menjalankan Unit Test
 1. Pastikan file test sudah tersedia di folder "tests".
 2. Jalankan perintah berikut:
 
-python -m pytest
+python -m pytest -v
 
 # Cara menjalankan Test Coverage
 1. Pastikan plugin "pytest-cov" sudah terpasang.
 2. Jalankan perintah berikut:
 
-python -m pytest --cov=extract --cov=transform --cov=load --cov-report=term-missing
+python -m pytest --cov=utils --cov-report=term-missing

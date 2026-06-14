@@ -12,5 +12,4 @@ wheels/
 # backup files (.bak, .bak1, .bak2, ...)
 *.bak*
 
-# zipped submission
-*.zip
+google-sheets-api.json
