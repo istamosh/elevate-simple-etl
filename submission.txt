@@ -3,3 +3,6 @@
 2. Jalankan extract.ipynb secara keseluruhan agar terlihat seluruh prosesnya
 3. Jalankan transform.ipynb secara keseluruhan
 4. Jalankan load.ipynb secara keseluruhan
+
+# Cara menjalankan test file
+1. python -m pytest

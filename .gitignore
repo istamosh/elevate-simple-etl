@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# backup files (.bak, .bak1, .bak2, ...)
+*.bak*
