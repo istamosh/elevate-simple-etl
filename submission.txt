@@ -15,6 +15,8 @@ jupyter lab
 
 python utils/write_data.py
 
+8. Kemudian tinjau URL berikut untuk melihat hasilnya: https://docs.google.com/spreadsheets/d/1kTg3P_O5IxHj1LsGIpRnUYg_ERlQesf4EIs8wVlYZzs/edit?usp=sharing
+
 
 # Cara menjalankan Unit Test
 1. Pastikan file test sudah tersedia di folder "tests".
