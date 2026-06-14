@@ -3,19 +3,11 @@
 
 python -m venv .venv
 
-2. Jalankan Jupyter notebook menggunakan command:
+2. Jalankan ETL Pipeline dengan:
 
-jupyter lab
+python run_pipeline.py
 
-3. Kemudian ada link (localhost), buka link tersebut maka akan diarahkan ke Web Browser dengan Jupyter Interface.
-4. Klik dua kali pada "extract.ipynb" di Sidebar kanan, dan pada Tab "Run" pilih "Run All Cells", tunggu sampai proses selesai. Maka akan muncul extracted_data.json.
-5. Klik dua kali pada "transform.ipynb" di Sidebar kanan, dan pada Tab "Run" pilih "Run All Cells", tunggu sampai proses selesai. Maka akan muncul cleaned_data.json dan transformed_data.json.
-6. Klik dua kali pada "load.ipynb" di Sidebar kanan, dan pada Tab "Run" pilih "Run All Cells", tunggu sampai proses selesai. Maka akan muncul final_data.csv.
-7. Cara menjalankan script untuk mengirim "final_data.csv" ke dalam Google Sheets
-
-python utils/write_data.py
-
-8. Kemudian tinjau URL berikut untuk melihat hasilnya: https://docs.google.com/spreadsheets/d/1kTg3P_O5IxHj1LsGIpRnUYg_ERlQesf4EIs8wVlYZzs/edit?usp=sharing
+3. Kemudian tinjau URL berikut untuk melihat hasilnya: https://docs.google.com/spreadsheets/d/1kTg3P_O5IxHj1LsGIpRnUYg_ERlQesf4EIs8wVlYZzs/edit?usp=sharing
 
 
 # Cara menjalankan Unit Test

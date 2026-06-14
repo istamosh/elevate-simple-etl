@@ -134,12 +134,8 @@ pip install -r requirements.txt
 
 ## Menjalankan Notebook
 
-Jalankan fase ETL secara berurutan:
-1. `extract.ipynb`
-2. `transform.ipynb`
-3. `load.ipynb`
-
-Urutan ini penting karena `transform.ipynb` membaca hasil dari `extracted_data.json`, dan `load.ipynb` membaca hasil dari `transformed_data.json`.[1][2][3]
+Jalankan pipeline ETL dengan:
+`python run_pipeline.py`
 
 ## Menjalankan Unit Test
 

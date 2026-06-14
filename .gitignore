@@ -13,3 +13,5 @@ wheels/
 *.bak*
 
 google-sheets-api.json
+
+elevate-simple-etl_rev*.zip
